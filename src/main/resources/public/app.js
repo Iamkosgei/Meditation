@@ -8,8 +8,12 @@ function start_timer() {
 
     var interval = setInterval(function() {
         $('h2').text(i);
+        var audio = new Audio('/ping.mp3');
+        audio.play();
         if (i == time) {
             clearInterval(interval);
+            var audio = new Audio('/ping.mp3');
+            audio.play();
             window.location.href = "/time/"+time;
             return;
 
