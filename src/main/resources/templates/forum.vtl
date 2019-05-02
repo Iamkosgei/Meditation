@@ -3,69 +3,32 @@
         <h1 class="forum-title">MEDITATION FORUM</h1>
         <div class="forum-submissions">
 
+
+
+            #foreach($forum in $forums)
             <div class="card forum-submission">
                 <div class="card-header">
-                    Submission
+                    <p><i class="fas fa-user"></i> By $forum.getName()</p>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <p> $forum.getMessage()</p>
                     </blockquote>
                 </div>
-                <footer class="card-footer"><i class="fas fa-user"></i> By user 001</footer>
+                <footer class="card-footer d-flex justify-content-between">
+                    <div>
+                    <i class="fas fa-envelope"></i> $forum.getEmail()
+                    </div>
+                    <div>
+                    <i class="far fa-clock"></i> $forum.getTime() Mins
+                    </div>
+
+                </footer>
             </div>
 
-            <div class="card forum-submission">
-                <div class="card-header">
-                    Submission
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    </blockquote>
-                </div>
-                <footer class="card-footer"><i class="fas fa-user"></i> By user 001</footer>
-            </div>
-
-            <div class="card forum-submission">
-                <div class="card-header">
-                    Submission
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    </blockquote>
-                </div>
-                <footer class="card-footer"><i class="fas fa-user"></i> By user 001</footer>
-            </div>
-
-            <div class="card forum-submission">
-                <div class="card-header">
-                    Submission
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    </blockquote>
-                </div>
-                <footer class="card-footer"><i class="fas fa-user"></i> By user 001</footer>
-            </div>
-
-            <div class="card forum-submission">
-                <div class="card-header">
-                    Submission
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    </blockquote>
-                </div>
-                <footer class="card-footer"><i class="fas fa-user"></i> By user 001</footer>
-            </div>
-
+            #end
 
         </div>
-
     </div>
 
 </section>
