@@ -3,6 +3,7 @@
         <h1 class="forum-title">MEDITATION FORUM</h1>
         <div class="forum-submissions">
 
+<<<<<<< HEAD
             <div class="card forum-submission">
                 <div class="card-header">
                     Submission
@@ -66,6 +67,34 @@
 
         </div>
 
+=======
+
+
+            #foreach($forum in $forums)
+            <div class="card forum-submission">
+                <div class="card-header">
+                    <p><i class="fas fa-user"></i> By $forum.getName()</p>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p> $forum.getMessage()</p>
+                    </blockquote>
+                </div>
+                <footer class="card-footer d-flex justify-content-between">
+                    <div>
+                    <i class="fas fa-envelope"></i> $forum.getEmail()
+                    </div>
+                    <div>
+                    <i class="far fa-clock"></i> $forum.getTime() Mins
+                    </div>
+
+                </footer>
+            </div>
+
+            #end
+
+        </div>
+>>>>>>> 88c0841a905ff30792f38b7f2798ce7a013daf7d
     </div>
 
 </section>
