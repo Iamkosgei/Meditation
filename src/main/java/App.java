@@ -34,6 +34,7 @@ public class App {
 
         get("/forum", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
+            model.put("forums", Forum.all() );
             model.put("template", "templates/forum.vtl");
             return new VelocityTemplateEngine().render(
                     new ModelAndView(model, layout)
@@ -48,6 +49,37 @@ public class App {
             );
         });
 
+        get("/time/:select-time", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            String time = req.params("select-time");
+            model.put("time",time);
+          model.put("template","templates/post-to-forum.vtl");
+
+            return new VelocityTemplateEngine().render(
+                    new ModelAndView(model, layout)
+            );
+        });
+
+        post("/forum", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            String email = req.queryParams("email");
+            String name = req.queryParams("name");
+            String message = req.queryParams("message");
+            int time = Integer.parseInt(req.queryParams("time"));
+
+
+            Forum forum = new Forum(name,time,message,email);
+            forum.save();
+
+
+
+            res.redirect("/forum");
+            return new VelocityTemplateEngine().render(
+                    new ModelAndView(model, layout)
+            );
+        });
 
     }
 }
