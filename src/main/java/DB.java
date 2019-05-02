@@ -11,7 +11,7 @@ public class DB {
     static {
         try {
             if (System.getenv("DATABASE_URL") == null) {
-                dbUri = new URI("postgres://kosgei:12345678@localhost:5432/meditation_db");
+                dbUri = new URI("postgres://moringaschool:password@localhost:5432/meditation_db");
             } else {
                 dbUri = new URI(System.getenv("DATABASE_URL"));
             }
