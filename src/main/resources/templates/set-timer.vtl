@@ -1,8 +1,9 @@
 <section class="timer-section">
-
+  <div id="clock"></div>
     <div class="container timer">
         <div class="form-group">
-        <select class="form-control" name="timeInput" id="timeInput">
+        <form id="setTime">
+             <select class="form-control" name="timeInput" id="timeInput">
 
                 <option value="0">---Enter The Time---</option>
                 <option value="10">10 minutes</option>
@@ -11,8 +12,7 @@
               </select><br>
         </div>
 
-        <a href="/forum" onclick="timer()" class="btn btn-success">SET TIMER</a>
+        <a href="/forum" ><button onclick="timer()" class="btn btn-success">SET TIMER</button></a>
+        </form>
     </div>
-
-
 </section>
