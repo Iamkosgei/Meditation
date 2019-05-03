@@ -8,8 +8,8 @@ function start_timer() {
 
     var interval = setInterval(function() {
         $('h2').text(i);
-        var audio = new Audio('/ping.mp3');
-        audio.play();
+        var sound = new Audio('/MiracleTone.mp3');
+        sound.play();
         if (i == time) {
             clearInterval(interval);
             var audio = new Audio('/ping.mp3');
